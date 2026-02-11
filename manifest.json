@@ -1,15 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "Piggy Buddy",
-  "version": "0.1.0",
-  "description": "A tiny pig to keep you company",
-  "host_permissions": ["<all_urls>"],
+  "name": "Piggy",
+  "version": "1.0.0",
+  "permissions": [],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "css": ["pig.css"],
-      "run_at": "document_idle"
+      "js": ["throw_feature.js", "content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["fall.html", "fall.js"],
+      "matches": ["<all_urls>"]
     }
   ]
 }

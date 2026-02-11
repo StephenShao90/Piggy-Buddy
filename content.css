@@ -1,0 +1,54 @@
+#piggy-overlay-root {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+#piggy-actor {
+  position: fixed;
+  left: 50px;
+  top: 50px;
+  width: 110px;
+  height: 110px;
+  transform: translate(-50%, -50%);
+  will-change: left, top, transform;
+
+  pointer-events: auto; /* clickable */
+  cursor: pointer;
+}
+
+#piggy-rig {
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 70%;
+  transform:
+    scale(var(--pig-scale, 1))
+    scaleX(var(--pig-flip, 1))
+    translateY(var(--pig-bob, 0px))
+    rotate(var(--pig-tilt, 0deg));
+}
+
+#piggy-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.pig-bone {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.pig-limb {
+  transform-box: fill-box;
+  transform-origin: 50% 10%;
+}
+
+.pig-face {
+  transform-box: fill-box;
+  transform-origin: center;
+}
